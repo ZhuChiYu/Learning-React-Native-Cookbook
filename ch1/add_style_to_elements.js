@@ -1,9 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
+/*
+ * @Author: zhu.cy@outlook.com 
+ * @Date: 2020-12-30 16:26:00 
+ * @Last Modified by: frank.zhuchiyu
+ * @Last Modified time: 2020-12-30 16:41:05
  */
 
 import React from 'react';
@@ -15,14 +14,6 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
 export default class App extends React.Component {
   render() {
@@ -57,6 +48,8 @@ const styles = StyleSheet.create({
     fontWeight: '200',
     color: '#fff',
     position: 'absolute',
+    /*增加Text的背景颜色是为了防止ios设备UI显示错误，
+    react native会设置组件的背景颜色为父组件的背景颜色*/
     backgroundColor: 'transparent',
     top: 12,
     left: 10,
