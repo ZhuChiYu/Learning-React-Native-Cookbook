@@ -1,8 +1,8 @@
 /*
  * @Author: zhu.cy@outlook.com 
- * @Date: 2020-12-30 16:26:00 
- * @Last Modified by: frank.zhuchiyu
- * @Last Modified time: 2020-12-30 16:41:05
+ * @Date: 2020-12-30 16:26:08 
+ * @Last Modified by:   frank.zhuchiyu 
+ * @Last Modified time: 2020-12-30 16:26:08 
  */
 
 import React from 'react';
@@ -13,8 +13,8 @@ import {
   View,
   Text,
   StatusBar,
+  Image
 } from 'react-native';
-
 export default class App extends React.Component {
   render() {
     const name = "01-Blue Behind Green Bloches";
@@ -48,8 +48,6 @@ const styles = StyleSheet.create({
     fontWeight: '200',
     color: '#fff',
     position: 'absolute',
-    /*增加Text的背景颜色是为了防止ios设备UI显示错误，
-    react native会设置组件的背景颜色为父组件的背景颜色*/
     backgroundColor: 'transparent',
     top: 12,
     left: 10,

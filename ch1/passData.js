@@ -2,7 +2,7 @@
  * @Author: zhu.cy@outlook.com 
  * @Date: 2020-12-31 09:20:05 
  * @Last Modified by: frank.zhuchiyu
- * @Last Modified time: 2021-01-04 15:10:18
+ * @Last Modified time: 2021-01-04 15:19:40
  */
 
 import React from 'react';
@@ -16,18 +16,16 @@ import {
   Text
 } from 'react-native';
 import {Navigation} from 'react-native-navigation'
-
-static.options = {
-  topBar: {
-    title: {
-    text: 'app',
+export default class passData extends React.Component {
+  static options(props) {
+    return {
+      topBar: {
+        title: {
+          text: props.name
+        }
+      }
     }
-  },
-  bottomTab: {
-      text: 'app'
   }
-}
-export default class App extends React.Component {
   
   render() {
     return (
@@ -35,11 +33,8 @@ export default class App extends React.Component {
         <View style={styles.topSection}>
           <Text style={styles.topSectionText}>topSectionText</Text>
         </View>
-        <View style={styles.midSection}>
-          <Text style={styles.midSectionText}>midSectionText</Text>
-        </View>
         <View style={styles.bottomSection}>
-          <Text style={styles.bottomSectionText}>bottomSectionText</Text>
+          <Text style={styles.bottomSectionText}>{this.props.status}</Text>
         </View>
       </View>
         

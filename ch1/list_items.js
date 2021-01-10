@@ -2,7 +2,7 @@
  * @Author: zhu.cy@outlook.com 
  * @Date: 2020-12-31 09:20:05 
  * @Last Modified by: frank.zhuchiyu
- * @Last Modified time: 2020-12-31 15:47:58
+ * @Last Modified time: 2021-01-04 17:03:32
  */
 
 import React from 'react';
@@ -16,11 +16,11 @@ import {
   TouchableHighlight,
   Text
 } from 'react-native';
-import data from './data/sales.json';
-const basketIcon = require('./images/basket.png');
+import data from '../data/sales.json';
+const basketIcon = require('../images/basket.png');
 
 
-export default class App extends React.Component {
+export default class listItem extends React.Component {
   
 
   renderRow(item) {
@@ -55,7 +55,6 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.mainContainer}>
-        <Header>Sales</Header>
         <FlatList
           data = {data}
           renderItem={({ item, index, separators }) => (
@@ -67,7 +66,6 @@ export default class App extends React.Component {
             </TouchableHighlight>
           )}
         />
-
       </View>
         
     )

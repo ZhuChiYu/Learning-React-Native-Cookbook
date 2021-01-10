@@ -2,15 +2,15 @@
  * @Author: zhu.cy@outlook.com 
  * @Date: 2021-01-04 09:34:59 
  * @Last Modified by: frank.zhuchiyu
- * @Last Modified time: 2021-01-04 17:02:59
+ * @Last Modified time: 2021-01-04 14:33:46
  * 增加Tab导航栏，和修改启动app的根节点
  */
  
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { Navigation } from 'react-native-navigation';
+import App from './passData'
 import {name as appName} from './app.json';
-import listItem from './ch1/list_items'
 const LoginScreen = () => {
     return (
         <View style={styles.root}>
@@ -33,7 +33,7 @@ const HomeScreen = (props) => {
         color='#710ce3'
         onPress={() => Navigation.push(props.componentId, {
           component: {
-            name: 'listItem',
+            name: 'Settings',
           }
         })}/>
       </View>
@@ -68,13 +68,23 @@ SettingsScreen.options = {
     }
 };
 
+App.options = {
+    topBar: {
+        title: {
+        text: 'app',
+        }
+    },
+    bottomTab: {
+        text: 'app'
+    }
+}
+
 //Navigation.registerComponent 给每一个React组件分配唯一的组件ID，这个ID
 //用来追踪压入栈内的组件
 Navigation.registerComponent('Home', () => HomeScreen);
 Navigation.registerComponent('Settings',() => SettingsScreen)
 Navigation.registerComponent('LoginScreen',() => LoginScreen)
-Navigation.registerComponent('listItem',() => listItem)
-
+Navigation.registerComponent(appName,() => App)
 
 const mainRoot = {
     root: {
@@ -102,6 +112,17 @@ const mainRoot = {
                         ]
                     }
                 },
+                {
+                    stack: {
+                        children: [
+                            {
+                                component: {
+                                    name: appName
+                                }
+                            }
+                        ]
+                    }
+                }
             ]
         },
     }
